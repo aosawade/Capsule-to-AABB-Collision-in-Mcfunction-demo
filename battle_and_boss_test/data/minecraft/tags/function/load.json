@@ -1,0 +1,9 @@
+{
+    "values": [
+        "globle:globle_init",
+        "collision_check:collision_sys_init",
+        "collision_check:test/test_init",
+        "collision_check:col_visualization/col_visual_init",
+        "player_action:player_action_init"
+    ]
+}

@@ -1,0 +1,2 @@
+function collision_check:test/loop/run_as_ray with storage collision_check:detected_ray rel_box
+function collision_check:rel_coo_detect/ray2box_check

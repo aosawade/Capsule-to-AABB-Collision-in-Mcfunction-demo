@@ -1,0 +1,511 @@
+{
+    "description": "dodge_motion",
+    "anvil_cost": 0,
+    "max_level": 5,
+    "weight": 1,
+    "min_cost": {
+        "base": 1,
+        "per_level_above_first": 0
+    },
+    "max_cost": {
+        "base": 1,
+        "per_level_above_first": 0
+    },
+    "supported_items": [],
+    "primary_items": [],
+    "slots": ["offhand","body"],
+    "effects": {
+        "minecraft:tick": [
+            {
+                "effect": {
+                    "type": "all_of",
+                    "effects": [
+                        {
+                            "type": "apply_impulse",
+                            "direction": [0,0,1],
+                            "coordinate_scale": [1,0,1],
+                            "magnitude": {
+                                "type": "linear",
+                                "base": 1,
+                                "per_level_above_first": 0.5
+                            }
+                        },
+                        {
+                            "type": "run_function",
+                            "function": "player_action:dodge/dodge_activate"
+                        }
+                    ]
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "forward": true,
+                                    "left": false,
+                                    "right": false,
+                                    "sneak": true
+                                }
+                            },
+                            "flags": {
+                                "is_sneaking": false,
+                                "is_fall_flying": false,
+                                "is_on_ground": true
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "dodge_effect_time": {"max": 0}
+                        }
+                    }
+                ]
+            },
+            {
+                "effect": {
+                    "type": "all_of",
+                    "effects": [
+                        {
+                            "type": "apply_impulse",
+                            "direction": [0,0,-1],
+                            "coordinate_scale": [1,0,1],
+                            "magnitude": {
+                                "type": "linear",
+                                "base": 1,
+                                "per_level_above_first": 0.5
+                            }
+                        },
+                        {
+                            "type": "run_function",
+                            "function": "player_action:dodge/dodge_activate"
+                        }
+                    ]
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "backward": true,
+                                    "left": false,
+                                    "right": false,
+                                    "sneak": true
+                                }
+                            },
+                            "flags": {
+                                "is_sneaking": false,
+                                "is_fall_flying": false,
+                                "is_on_ground": true
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "dodge_effect_time": {"max": 0}
+                        }
+                    }
+                ]
+            },
+            {
+                "effect": {
+                    "type": "all_of",
+                    "effects": [
+                        {
+                            "type": "apply_impulse",
+                            "direction": [1,0,0],
+                            "coordinate_scale": [1,0,1],
+                            "magnitude": {
+                                "type": "linear",
+                                "base": 1,
+                                "per_level_above_first": 0.5
+                            }
+                        },
+                        {
+                            "type": "run_function",
+                            "function": "player_action:dodge/dodge_activate"
+                        }
+                    ]
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "forward": false,
+                                    "left": true,
+                                    "backward": false,
+                                    "sneak": true
+                                }
+                            },
+                            "flags": {
+                                "is_sneaking": false,
+                                "is_fall_flying": false,
+                                "is_on_ground": true
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "dodge_effect_time": {"max": 0}
+                        }
+                    }
+                ]
+            },
+            {
+                "effect": {
+                    "type": "all_of",
+                    "effects": [
+                        {
+                            "type": "apply_impulse",
+                            "direction": [-1,0,0],
+                            "coordinate_scale": [1,0,1],
+                            "magnitude": {
+                                "type": "linear",
+                                "base": 1,
+                                "per_level_above_first": 0.5
+                            }
+                        },
+                        {
+                            "type": "run_function",
+                            "function": "player_action:dodge/dodge_activate"
+                        }
+                    ]
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "forward": false,
+                                    "right": true,
+                                    "backward": false,
+                                    "sneak": true
+                                }
+                            },
+                            "flags": {
+                                "is_sneaking": false,
+                                "is_fall_flying": false,
+                                "is_on_ground": true
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "dodge_effect_time": {"max": 0}
+                        }
+                    }
+                ]
+            },
+            {
+                "effect": {
+                    "type": "all_of",
+                    "effects": [
+                        {
+                            "type": "apply_impulse",
+                            "direction": [0.707107,0,0.707107],
+                            "coordinate_scale": [1,0,1],
+                            "magnitude": {
+                                "type": "linear",
+                                "base": 1,
+                                "per_level_above_first": 0.5
+                            }
+                        },
+                        {
+                            "type": "run_function",
+                            "function": "player_action:dodge/dodge_activate"
+                        }
+                    ]
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "forward": true,
+                                    "left": true,
+                                    "sneak": true
+                                }
+                            },
+                            "flags": {
+                                "is_sneaking": false,
+                                "is_fall_flying": false,
+                                "is_on_ground": true
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "dodge_effect_time": {"max": 0}
+                        }
+                    }
+                ]
+            },
+            {
+                "effect": {
+                    "type": "all_of",
+                    "effects": [
+                        {
+                            "type": "apply_impulse",
+                            "direction": [-0.707107,0,0.707107],
+                            "coordinate_scale": [1,0,1],
+                            "magnitude": {
+                                "type": "linear",
+                                "base": 1,
+                                "per_level_above_first": 0.5
+                            }
+                        },
+                        {
+                            "type": "run_function",
+                            "function": "player_action:dodge/dodge_activate"
+                        }
+                    ]
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "forward": true,
+                                    "right": true,
+                                    "sneak": true
+                                }
+                            },
+                            "flags": {
+                                "is_sneaking": false,
+                                "is_fall_flying": false,
+                                "is_on_ground": true
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "dodge_effect_time": {"max": 0}
+                        }
+                    }
+                ]
+            },
+            {
+                "effect": {
+                    "type": "all_of",
+                    "effects": [
+                        {
+                            "type": "apply_impulse",
+                            "direction": [0.707107,0,-0.707107],
+                            "coordinate_scale": [1,0,1],
+                            "magnitude": {
+                                "type": "linear",
+                                "base": 1,
+                                "per_level_above_first": 0.5
+                            }
+                        },
+                        {
+                            "type": "run_function",
+                            "function": "player_action:dodge/dodge_activate"
+                        }
+                    ]
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "backward": true,
+                                    "left": true,
+                                    "sneak": true
+                                }
+                            },
+                            "flags": {
+                                "is_sneaking": false,
+                                "is_fall_flying": false,
+                                "is_on_ground": true
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "dodge_effect_time": {"max": 0}
+                        }
+                    }
+                ]
+            },
+            {
+                "effect": {
+                    "type": "all_of",
+                    "effects": [
+                        {
+                            "type": "apply_impulse",
+                            "direction": [-0.707107,0,-0.707107],
+                            "coordinate_scale": [1,0,1],
+                            "magnitude": {
+                                "type": "linear",
+                                "base": 1,
+                                "per_level_above_first": 0.5
+                            }
+                        },
+                        {
+                            "type": "run_function",
+                            "function": "player_action:dodge/dodge_activate"
+                        }
+                    ]
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "backward": true,
+                                    "right": true,
+                                    "sneak": true
+                                }
+                            },
+                            "flags": {
+                                "is_sneaking": false,
+                                "is_fall_flying": false,
+                                "is_on_ground": true
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "dodge_effect_time": {"max": 0}
+                        }
+                    }
+                ]
+            },
+            {
+                "effect": {
+                    "type": "all_of",
+                    "effects": [
+                        {
+                            "type": "apply_impulse",
+                            "direction": [1,0,0],
+                            "coordinate_scale": [1,1,1],
+                            "magnitude": {
+                                "type": "linear",
+                                "base": 0.5,
+                                "per_level_above_first": 0.25
+                            }
+                        },
+                        {
+                            "type": "run_function",
+                            "function": "player_action:dodge/dodge_activate"
+                        }
+                    ]
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "left": true,
+                                    "sneak": true
+                                }
+                            },
+                            "flags": {
+                                "is_sneaking": false,
+                                "is_fall_flying": true
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "dodge_effect_time": {"max": 0}
+                        }
+                    }
+                ]
+            },
+            {
+                "effect": {
+                    "type": "all_of",
+                    "effects": [
+                        {
+                            "type": "apply_impulse",
+                            "direction": [-1,0,0],
+                            "coordinate_scale": [1,1,1],
+                            "magnitude": {
+                                "type": "linear",
+                                "base": 0.5,
+                                "per_level_above_first": 0.25
+                            }
+                        },
+                        {
+                            "type": "run_function",
+                            "function": "player_action:dodge/dodge_activate"
+                        }
+                    ]
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "right": true,
+                                    "sneak": true
+                                }
+                            },
+                            "flags": {
+                                "is_sneaking": false,
+                                "is_fall_flying": true
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "dodge_effect_time": {"max": 0}
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

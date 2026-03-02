@@ -1,0 +1,33 @@
+{
+    "description": "dodge_effect",
+    "anvil_cost": 0,
+    "max_level": 1,
+    "weight": 1,
+    "min_cost": {
+        "base": 2,
+        "per_level_above_first": 0
+    },
+    "max_cost": {
+        "base": 1,
+        "per_level_above_first": 0
+    },
+    "supported_items": [],
+    "primary_items": [],
+    "slots": ["offhand","body"],
+    "effects": {
+        "minecraft:damage_immunity": [
+            {
+                "effect": {},
+                "requirements": [
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "status": 1
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

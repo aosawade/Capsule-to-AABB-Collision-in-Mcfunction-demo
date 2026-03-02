@@ -1,0 +1,2 @@
+function player_action:jump/detect_jump
+function player_action:dodge/dodge_detect

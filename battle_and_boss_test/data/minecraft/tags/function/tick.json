@@ -1,0 +1,6 @@
+{
+    "values": [
+        "collision_check:loop",
+        "player_action:loop"
+    ]
+}

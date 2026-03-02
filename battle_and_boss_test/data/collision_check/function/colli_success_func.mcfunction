@@ -1,0 +1,1 @@
+scoreboard players set #is_collision boolean 1

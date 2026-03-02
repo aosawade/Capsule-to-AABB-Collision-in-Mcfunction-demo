@@ -1,0 +1,4 @@
+#加载胶囊体数据，并运行检测
+function collision_check:rel_coo_detect/load_capsule with storage collision_check:detected_cap rel_box
+function collision_check:col_visualization/update_visual_cap with entity @s
+function collision_check:rel_coo_detect/cap2aabb_check

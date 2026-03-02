@@ -1,0 +1,7 @@
+{
+	"pack": {
+		"description": "战斗与BOSS测试",
+		"min_format": 88,
+		"max_format": 9999999
+	}
+}

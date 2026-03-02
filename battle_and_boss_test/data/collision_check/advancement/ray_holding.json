@@ -1,0 +1,17 @@
+{
+    "criteria": {
+        "use_stick":{
+            "trigger": "minecraft:using_item",
+            "conditions": {
+                "item": {
+                    "components": {
+                        "custom_name": "ray_hander"
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "collision_check:test/holding_ray"
+    }
+}

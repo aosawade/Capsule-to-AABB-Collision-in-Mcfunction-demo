@@ -1,0 +1,49 @@
+{
+    "description": "test_effect",
+    "anvil_cost": 0,
+    "max_level": 1,
+    "weight": 1,
+    "min_cost": {
+        "base": 2,
+        "per_level_above_first": 0
+    },
+    "max_cost": {
+        "base": 1,
+        "per_level_above_first": 0
+    },
+    "supported_items": [],
+    "primary_items": [],
+    "slots": ["offhand","body"],
+    "effects": {
+        "minecraft:tick": [
+            {
+                "effect": {
+                    "type": "minecraft:run_function",
+                    "function": "collision_check:test/test"
+                },
+                "requirements": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "player",
+                                "input": {
+                                    "forward": true,
+                                    "sneak": true
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "flags": {"is_sneaking": false}
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
