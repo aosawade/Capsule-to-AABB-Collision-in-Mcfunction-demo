@@ -1,2 +1,3 @@
-battle_and_boss_test是战斗碰撞检测数据包的主文件
-capsule_test是用于测试的aj动画数据包
+battle_and_boss_test是战斗碰撞检测数据包的主文件  
+capsule_test是用于测试的aj动画数据包  
+resources.zip是capsule_test的资源包
